@@ -1,0 +1,85 @@
+<!DOCTYPE lift>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Rock Paper Scissors</h1>
+            <div class="score-board">
+                <div class="score-card">
+                    <span class="label">You</span>
+                    <span id="user-score" class="score">0</span>
+                </div>
+                <div class="score-card">
+                    <span class="label">Computer</span>
+                    <span id="comp-score" class="score">0</span>
+                </div>
+                <div class="score-card">
+                    <span class="label">Ties</span>
+                    <span id="tie-score" class="score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="status-message" id="status-message">Make your move!</div>
+            
+            <div class="game-area">
+                <div class="choices">
+                    <button class="choice-btn" data-choice="rock">
+                        <span class="icon">✊</span>
+                        <span class="text">Rock</span>
+                    </button>
+                    <button class="choice-btn" data-choice="paper">
+                        <span class="icon">✋</span>
+                        <span class="text">Paper</span>
+                    </button>
+                    <button class="choice-btn" data-choice="scissors">
+                        <span class="icon">✌️</span>
+                        <span class="text">Scissors</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="battle-area hidden" id="battle-area">
+                <div class="fighter" id="user-fighter">
+                    <span class="fighter-icon">✊</span>
+                    <span class="fighter-label">You</span>
+                </div>
+                <div class="vs">VS</div>
+                <div class="fighter" id="comp-fighter">
+                    <span class="fighter-icon">✋</span>
+                    <span class="fighter-label">Computer</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="reset-btn" id="history-btn">Game History</button>
+                <button class="reset-btn" id="reset-btn">Reset Game</button>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal hidden" id="history-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Game History</h2>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <div class="history-list" id="history-list">
+                <!-- History items will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
